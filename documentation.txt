@@ -1,0 +1,219 @@
+INWORD/OUTWORD - FRONTEND - REACT/TS/TANSTACK-QUERY/SOCKET.IO
+
+PLAY - <PlayPage/>
+
+I. Not Your Turn
+    1. Board - When it's not the player's turn, the source of the board, is Tanstack Query. Think of it like 'server state'.
+    2. Cells - The source of the cells, is props. Each cell, will always get it's data, for display, or calculation, from the 
+    'cell' prop. This might change, maybe. ... we'll see... lol.
+
+II. Your Turn
+    1. Board - When the player's turn starts, initially, the source of the board is again, Tanstack Query. However, every time
+    Socket.io tells a client to refresh their queries (which happens after any player makes a valid play, and it completes on the 
+    backend) the client makes a copy of the current board and stores it in a Jotai atom. Now when the player whose turn it is, decides 
+    to click 'Make a Play', the source of the board is swapped, and becomes the copy made after the refresh event.
+    2. Cells - Again, the source of the cells should be props.
+
+III. Turn Machine - Stately XState state machine.
+
+IV. Game Play Components - components which build out the game, all children of <PlayPage/>
+    1. Layout - The Play page comnsists of a div covering the entire screen, with 2 divs inside of it, the Left and Right columns. The exact same size, 50-50.
+    2. Left column
+        a. Board - the board is in the Left column, but I am thinking of making it changable, to the right (swapping the left and right columns)
+        b. Cells - the cells, are children of the board.
+    3. Right column
+        a. Top - Logo left, Menu right
+        b. State Machine switch
+            * Not Player's Turn:
+                1. Idle state:
+                    i. <NotTurnIdleStateControl/>
+                    i. <RenderPlayerLetters/> - props: letters
+            * Player's Turn:
+                1. Idle state:
+                    i. <TurnIdleStateControl/> - maybe???
+                    i. <TurnIdleStateButtons/> - "Make Play" and "Pass Turn"
+                2. Choosing Word state:
+                    i. <ChoosingWordStateControl/> - props: turnState, turnStateSend
+                    i. <ChoosingWordStateButtons/> - props: turnState, turnStateSend
+                3. Choosing Position state:
+                    i. <ChoosingPositionStateControl/>
+                    i. <ChoosingPositionStateButtons/>
+                4. Ready to Play state:
+                    i. <ReadyToPlayStateControl/> - Display WHAT they've played, and ask if they Really Want to Play this play...
+                    ii. <ReadyToPlayStateButtons/> - "Play Turn", "Cancel", "Pass Turn"
+        c. Chat Box                   
+        d. <AdminPanelPlayPage/> - props: turnState, turnStateSend
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        b. <RenderTurnScoreTable/> - pr mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmops: players
+        c. <RenderPlayerLetters/> - props: letters
+
+

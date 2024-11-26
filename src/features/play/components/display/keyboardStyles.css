@@ -1,0 +1,20 @@
+/* KeyboardStyles.css */
+.myCustomKeyboardTheme {
+    background-color: #0f172a;
+}
+
+.myCustomKeyboardTheme .hg-button {
+    background-color: #3730a3;
+    color: #a5b4fc;
+}
+
+.myCustomKeyboardTheme .hg-button:hover {
+    background-color: #4f46e5;
+    color: #e0e7ff;
+}
+
+/*
+.myCustomKeyboardTheme .hg-button.hg-highlight {
+    background-color: #f00;
+}
+*/

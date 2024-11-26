@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+	overflow: hidden !important;
+}
+
+body {
+	/* TailwindCSS's slate-100 */
+	background-color: rgb(241 245 249);
+}
+
+iframe[data-xstate] {
+	width: 80vw;
+	height: 50vh;
+	border: 1px;
+	position: fixed;
+	right: 0;
+	bottom: 0;
+}
+
+.play-font {
+	font-family: "Play", sans-serif;
+}
+
+.white-stroke {
+	-webkit-text-stroke: 1px white; /* WebKit/Blink browsers */
+	text-stroke: 1px white; /* Standard */
+	-webkit-text-fill-color: transparent; /* Hide original text */
+}
+
+.red-stroke {
+	-webkit-text-stroke: 1px red; /* WebKit/Blink browsers */
+	text-stroke: 1px red; /* Standard */
+	-webkit-text-fill-color: transparent; /* Hide original text */
+}
