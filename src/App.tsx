@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom'
-import LoginPage from './app/pages/loginPage'
 import PageNotFound from './app/pages/notFoundPage'
 import PlayPage from './features/play/playPage'
 
@@ -11,34 +10,8 @@ export default function App() {
     return (
         <Router>
             <Routes>
-                <Route
-                    path="/"
-                    element={
-                        // <AuthGuard>
-                        <PlayPage />
-                        // </AuthGuard>
-                    }
-                />
-                {/* <Route path="/game">
-                    <Route
-                        path="play"
-                        element={
-                            <AuthGuard>
-                                <PlayPage />
-                            </AuthGuard>
-                        }
-                    />
-                </Route>
-                <Route
-                    path="/admin/users"
-                    element={
-                        <AuthGuard>
-                            <UsersPage />
-                        </AuthGuard>
-                    }
-                /> */}
-                {/* <Route path="/poo" element={<TestComp />} /> */}
-                <Route path="/login" element={<LoginPage />} />
+                <Route path="/" element={<PlayPage />} />
+
                 <Route path="/404" element={<PageNotFound />} />
                 <Route path="*" element={<Navigate to="/404" />} />
             </Routes>

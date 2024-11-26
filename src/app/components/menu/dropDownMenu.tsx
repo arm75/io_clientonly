@@ -12,10 +12,8 @@ import {
 } from '../shadcn/ui/dropdown-menu'
 import AvatarDemo from '../custom/avatar'
 import { useAuthMe } from '../../auth/useAuthMe'
-import { useAtom } from 'jotai'
 import useAxios from '../../api/axios'
 import { AxiosResponse } from 'axios'
-import { showAdminGameControlsAtom, showAdminBlockNamesAtom, showGameTipsAtom } from '../../../features/play/state/atoms/oldAtoms'
 
 export default function DropDownMenu({
     menuTitleColorTw = 'red-500', // like 'red-300', or 'amber-500', defaults to red so i know if its set
@@ -29,21 +27,21 @@ export default function DropDownMenu({
     const authMeQueryData = useAuthMe()
     const api = useAxios()
 
-    const [showAdminGameControls, setShowAdminGameControls] = useAtom(showAdminGameControlsAtom)
-    const [showAdminBlockNames, setShowAdminBlockNames] = useAtom(showAdminBlockNamesAtom)
-    const [showGameTips, setShowGameTips] = useAtom(showGameTipsAtom)
+    // const [showAdminGameControls, setShowAdminGameControls] = useAtom(showAdminGameControlsAtom)
+    // const [showAdminBlockNames, setShowAdminBlockNames] = useAtom(showAdminBlockNamesAtom)
+    // const [showGameTips, setShowGameTips] = useAtom(showGameTipsAtom)
 
-    function toggleShowAdminGameControls() {
-        setShowAdminGameControls(!showAdminGameControls)
-    }
+    // function toggleShowAdminGameControls() {
+    //     setShowAdminGameControls(!showAdminGameControls)
+    // }
 
-    function toggleShowAdminBlockNames() {
-        setShowAdminBlockNames(!showAdminBlockNames)
-    }
+    // function toggleShowAdminBlockNames() {
+    //     setShowAdminBlockNames(!showAdminBlockNames)
+    // }
 
-    function toggleShowGameTips() {
-        setShowGameTips(!showGameTips)
-    }
+    // function toggleShowGameTips() {
+    //     setShowGameTips(!showGameTips)
+    // }
 
     function logout() {
         api.get('/auth/logout', { withCredentials: true }).then(
@@ -89,7 +87,7 @@ export default function DropDownMenu({
                     </DropdownMenuItem>
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem onClick={toggleShowAdminGameControls} className="hover:bg-violet-700 hover:text-white focus:bg-violet-700 focus:text-white">
+                {/* <DropdownMenuItem onClick={toggleShowAdminGameControls} className="hover:bg-violet-700 hover:text-white focus:bg-violet-700 focus:text-white">
                     <Shield className="mr-2 h-4 w-4" />
                     <span>Admin Panel</span>
                 </DropdownMenuItem>
@@ -100,7 +98,7 @@ export default function DropDownMenu({
                 <DropdownMenuItem onClick={toggleShowGameTips} className="hover:bg-violet-700 hover:text-white focus:bg-violet-700 focus:text-white">
                     <Shield className="mr-2 h-4 w-4" />
                     <span>Show Game Tips</span>
-                </DropdownMenuItem>
+                </DropdownMenuItem> */}
                 <DropdownMenuItem className="hover:bg-violet-700 hover:text-white focus:bg-violet-700 focus:text-white">
                     <LifeBuoy className="mr-2 h-4 w-4" />
                     <span>Support</span>
