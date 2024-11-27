@@ -22,11 +22,7 @@ const RenderBuckInput = ({ buckTile, addToPickupQueue }: RenderBuckInputProps) =
                 layout={{
                     default: ['Q W E R T Y U I O P', 'A S D G H J K L', 'Z X C V B N M'],
                 }}
-                // display={{
-                //     '{bksp}': '⌫',
-                // }}
                 theme={'hg-theme-default myCustomKeyboardTheme'}
-                //buttonTheme={[{ class: 'hg-highlight', buttons: 'Q W E R T Y' }]}
             />
         </div>
     )

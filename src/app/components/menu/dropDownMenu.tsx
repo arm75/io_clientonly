@@ -1,4 +1,4 @@
-import { LifeBuoy, LogOut, Settings, Shield, User } from 'lucide-react'
+import { LifeBuoy, LogOut, Settings, User } from 'lucide-react'
 import { Button } from '../shadcn/ui/button'
 import {
     DropdownMenu,

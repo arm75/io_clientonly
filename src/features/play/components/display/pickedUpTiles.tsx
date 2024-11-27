@@ -1,7 +1,5 @@
-import { useAtomValue } from 'jotai'
 import { useEffect, useRef } from 'react'
 import { QueueTile } from '../../types/ui/queueTile'
-import { tilesLeftQueueAtom } from '../../state/atoms/turnQueues'
 
 const RENDER_LOG = import.meta.env.VITE_APP_RENDER_LOG
 
@@ -12,12 +10,12 @@ type PickedUpTilesProps = {
 const PickedUpTiles = ({ tiles }: PickedUpTilesProps) => {
     if (RENDER_LOG === 'true') console.log('<ChosenWordToPlay> rendered...')
 
-    const bsDivRef: any = useRef(null)
+    const bsDivRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
         let x: number, y: number
 
-        const handleMouseMove = (event: any) => {
+        const handleMouseMove = (event: MouseEvent) => {
             x = event.clientX
             y = event.clientY
 
